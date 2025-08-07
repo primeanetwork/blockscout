@@ -5,8 +5,8 @@ services:
     image: nginx
     container_name: proxy
     environment:
-      BACK_PROXY_PASS: ${BACK_PROXY_PASS:-http://127.0.0.1:4000}
-      FRONT_PROXY_PASS: ${FRONT_PROXY_PASS:-http://127.0.0.1:3000}
+      BACK_PROXY_PASS: ${BACK_PROXY_PASS:-http://backend:4000}
+      FRONT_PROXY_PASS: ${FRONT_PROXY_PASS:-http://frontend:3000}
     ports:
       - target: 80
         published: 8080

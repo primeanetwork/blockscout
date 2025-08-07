@@ -44,6 +44,15 @@ ENV API_GRAPHQL_MAX_COMPLEXITY=${API_GRAPHQL_MAX_COMPLEXITY}
 # Run backend compilation
 RUN mix compile
 
+# Install node/npm for frontend assets ADDED
+RUN apk add --no-cache nodejs npm
+
+# Build frontend assets and digest ADDED
+RUN npm install --prefix apps/block_scout_web/assets && \
+    npm run deploy --prefix apps/block_scout_web/assets && \
+    mix phx.digest
+
+# Release binary
 RUN mkdir -p /opt/release && \
     mix release blockscout && \
     mv _build/${MIX_ENV}/rel/blockscout /opt/release

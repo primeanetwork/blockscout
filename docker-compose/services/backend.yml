@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   backend:
     image: ghcr.io/blockscout/${DOCKER_REPO:-blockscout}:${DOCKER_TAG:-latest}
@@ -12,7 +10,7 @@ services:
       - /opt/primea/blockscout/docker-compose/envs/common-blockscout.env
     volumes:
       - ./logs:/app/logs
-      - queue_storage:/app/dets
+      - ./dets:/app/dets
     ports:
       - target: 4000
         published: 4000

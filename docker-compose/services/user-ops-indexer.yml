@@ -2,11 +2,8 @@ version: '3.9'
 
 services:
   user-ops-indexer:
-    build:
-      context: ../..
-      dockerfile: docker/Dockerfile
-      target: user-ops-indexer
-    image: primea/blockscout-user-ops-indexer:dev
+    image: ghcr.io/blockscout/user-ops-indexer:${USER_OPS_INDEXER_DOCKER_TAG:-latest}
+    pull_policy: always
     platform: linux/amd64
     restart: always
     container_name: 'user-ops-indexer'

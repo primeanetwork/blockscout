@@ -2,10 +2,8 @@ version: '3.9'
 
 services:
   sig-provider:
-    build:
-      context: ../..
-      dockerfile: ./Dockerfile
-      target: sig-provider
+    image: ghcr.io/blockscout/sig-provider:${SIG_PROVIDER_DOCKER_TAG:-latest}
+    pull_policy: always
     image: primea/blockscout-sig-provider:dev
     platform: linux/amd64
     restart: always

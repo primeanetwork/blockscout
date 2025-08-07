@@ -11,12 +11,10 @@ services:
     env_file:
       - /opt/primea/blockscout/docker-compose/envs/common-blockscout.env
     volumes:
-      - ./logs/:/app/logs/
-      - ./dets/:/app/dets/
+      - ./logs:/app/logs
+      - queue_storage:/app/dets
     ports:
       - target: 4000
         published: 4000
         protocol: tcp
         mode: host
-
-

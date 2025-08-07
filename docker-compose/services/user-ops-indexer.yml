@@ -4,7 +4,7 @@ services:
   user-ops-indexer:
     build:
       context: ../..
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
       target: user-ops-indexer
     image: primea/blockscout-user-ops-indexer:dev
     platform: linux/amd64

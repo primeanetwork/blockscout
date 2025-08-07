@@ -3,8 +3,9 @@ version: '3.9'
 services:
   frontend:
     build:
-      context: ../../
-      dockerfile: docker/frontend/Dockerfile
+      context: ../..
+      dockerfile: ./Dockerfile
+      target: frontend
     image: primea/blockscout-frontend:dev
     platform: linux/amd64
     restart: always

@@ -3,8 +3,9 @@ version: '3.9'
 services:
   sig-provider:
     build:
-      context: ../../
+      context: ../..
       dockerfile: ./Dockerfile
+      target: sig-provider
     image: primea/blockscout-sig-provider:dev
     platform: linux/amd64
     restart: always

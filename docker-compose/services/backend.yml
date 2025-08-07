@@ -3,8 +3,9 @@ version: '3.9'
 services:
   backend:
     build:
-      context: ../../
+      context: ../..
       dockerfile: ./Dockerfile
+      target: backend
     image: primea/blockscout-backend:dev
     restart: always
     stop_grace_period: 5m

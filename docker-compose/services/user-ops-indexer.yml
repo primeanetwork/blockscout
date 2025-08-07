@@ -3,8 +3,9 @@ version: '3.9'
 services:
   user-ops-indexer:
     build:
-      context: ../../
+      context: ../..
       dockerfile: ./Dockerfile
+      target: user-ops-indexer
     image: primea/blockscout-user-ops-indexer:dev
     platform: linux/amd64
     restart: always

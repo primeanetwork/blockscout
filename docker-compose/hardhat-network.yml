@@ -52,7 +52,7 @@ services:
       file: ./services/frontend.yml
       service: frontend
     environment:
-      NEXT_PUBLIC_NETWORK_ID: '31337'
+      NEXT_PUBLIC_NETWORK_ID: '698369'
       NEXT_PUBLIC_NETWORK_RPC_URL: http://192.168.249.3:8545/
 
   stats-db-init:

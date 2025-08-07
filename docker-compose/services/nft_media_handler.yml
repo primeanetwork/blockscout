@@ -12,6 +12,6 @@ services:
     container_name: 'nft_media_handler'
     command: sh -c "bin/blockscout start"
     env_file:
-      -  ../docker-compose/envs/common-nft-media-handler.env
+      - ../envs/common-nft-media-handler.env
     volumes:
       - ./logs/:/app/logs/

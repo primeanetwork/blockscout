@@ -13,4 +13,10 @@ services:
     volumes:
       - ./logs/:/app/logs/
       - ./dets/:/app/dets/
+    ports:
+      - target: 4000
+        published: 4000
+        protocol: tcp
+        mode: host
+
 

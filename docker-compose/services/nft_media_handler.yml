@@ -4,7 +4,7 @@ services:
   nft_media_handler:
     build:
       context: ../../
-      dockerfile: docker/nft_media_handler/Dockerfile
+      dockerfile: ./Dockerfile
     image: primea/blockscout-nft-media-handler:dev
     restart: always
     stop_grace_period: 5m

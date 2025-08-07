@@ -4,7 +4,7 @@ services:
   user-ops-indexer:
     build:
       context: ../../
-      dockerfile: docker/user-ops-indexer/Dockerfile
+      dockerfile: ./Dockerfile
     image: primea/blockscout-user-ops-indexer:dev
     platform: linux/amd64
     restart: always

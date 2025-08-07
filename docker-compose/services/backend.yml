@@ -12,7 +12,7 @@ services:
     container_name: 'backend'
     command: sh -c "bin/blockscout eval \"Elixir.Explorer.ReleaseTasks.create_and_migrate()\" && bin/blockscout start"
     env_file:
-      -  ./envs/common-blockscout.env
+      -  ../envs/common-blockscout.env
     volumes:
       - ./logs/:/app/logs/
       - ./dets/:/app/dets/

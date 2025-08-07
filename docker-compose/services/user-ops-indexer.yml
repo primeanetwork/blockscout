@@ -4,14 +4,14 @@ services:
   user-ops-indexer:
     build:
       context: ../..
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
       target: user-ops-indexer
     image: primea/blockscout-user-ops-indexer:dev
     platform: linux/amd64
     restart: always
     container_name: 'user-ops-indexer'
     env_file:
-      -  ../envs/common-user-ops-indexer.env
+      -  ../docker-compose/envs/common-user-ops-indexer.env
     environment:
       - USER_OPS_INDEXER__INDEXER__RPC_URL=${USER_OPS_INDEXER__INDEXER__RPC_URL:-ws://192.168.249.3:8546/}
       - USER_OPS_INDEXER__DATABASE__CONNECT__URL=${USER_OPS_INDEXER__DATABASE__CONNECT__URL:-postgresql://blockscout:ceWb1MeLBEeOIfk65gU8EjF8@db:5432/blockscout}

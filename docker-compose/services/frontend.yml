@@ -4,7 +4,7 @@ services:
   frontend:
     build:
       context: ../..
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
       target: frontend
     image: primea/blockscout-frontend:dev
     platform: linux/amd64

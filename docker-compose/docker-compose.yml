@@ -40,8 +40,6 @@ services:
       RELEASE_COOKIE: secret_cookie
       RELEASE_DISTRIBUTION: name
       RELEASE_NODE: producer@127.0.0.1
-    volumes:
-      - queue_storage:/app/dets
 
   nft_media_handler:
     depends_on:

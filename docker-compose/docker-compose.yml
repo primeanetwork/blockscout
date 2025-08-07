@@ -33,11 +33,15 @@ services:
         RELEASE_VERSION: 8.1.2
     links:
       - db:database
+    hostname: backend.local
     environment:
         ETHEREUM_JSONRPC_HTTP_URL: http://192.168.249.3:8545/
         ETHEREUM_JSONRPC_TRACE_URL: http://192.168.249.3:8545/
         ETHEREUM_JSONRPC_WS_URL: ws://192.168.249.3:8546/
         CHAIN_ID: '698369'
+        RELEASE_COOKIE: secret_cookie
+        RELEASE_DISTRIBUTION: name
+        RELEASE_NODE: producer@backend.local
 
   nft_media_handler:
     depends_on:

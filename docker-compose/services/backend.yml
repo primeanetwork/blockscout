@@ -11,6 +11,7 @@ services:
     volumes:
       - ../logs:/app/logs
       - ../dets:/app/dets
+    user: root
     ports:
       - target: 4000
         published: 4000
